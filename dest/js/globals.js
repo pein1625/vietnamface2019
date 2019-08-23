@@ -91,4 +91,15 @@ function addSwiper(selector, options = {}) {
   });
 }
 
-//=require _common.js
+// register scroll to next form
+$(function () {
+  $('.js-scroll-to-next-form').on('click', function () {
+    var offset = $('.js-next-form').offset().top;
+
+    $('html, body').animate({
+      scrollTop: offset
+    }, 1000);
+
+    $('.js-next-form-first-input').focus();
+  });
+});
