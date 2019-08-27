@@ -103,3 +103,19 @@ $(function () {
     $('.js-next-form-first-input').focus();
   });
 });
+
+// menu scroll to section
+$(function () {
+  $('.js-menu-scroll').on('click', function (e) {
+    e.preventDefault();
+    var target = $(this).attr('href');
+    var headerHeight = $('.header__wrapper').outerHeight();
+
+    $('.js-navbar').removeClass('is-show');
+    $('body').removeClass('overflow-hidden');
+
+    $('html, body').animate({
+      scrollTop: $(target).offset().top - headerHeight
+    }, 1000);
+  });
+});
